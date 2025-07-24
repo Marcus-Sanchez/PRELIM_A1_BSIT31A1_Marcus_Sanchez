@@ -1,0 +1,117 @@
+﻿@using PRELIM_A1_BSIT31A1_Marcus_Sanchez.Models
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@{
+    var students = new List<Student>();
+
+    var s1 = new Student("Victor", "Alo");
+    s1.Title = "Mr.";
+    s1.Course = "BSIT";
+    s1.Section = "31A1";
+    s1.Birthday = new DateTime(2004, 5, 15);
+    s1.SetGender(Gender.Male);
+    students.Add(s1);
+
+    var s2 = new Student("Xyross", "Bundalian");
+    s2.Title = "Mr.";
+    s2.Course = "BSIT";
+    s2.Section = "31A1";
+    s2.Birthday = new DateTime(2003, 7, 22);
+    s2.SetGender(Gender.Male);
+    students.Add(s2);
+
+    
+    var s3 = new Student("Andrei", "Guillena"); 
+    s3.Title = "Mr."; 
+    s3.Course = "BSIT"; 
+    s3.Section = "31A1";
+    s3.Birthday = new DateTime(2004, 3, 3); 
+    s3.SetGender(Gender.Male);
+    students.Add(s3);
+    
+    var s4 = new Student("Anthony", "Ramos");
+    s4.Title = "Mr.";
+    s4.Course = "BSIT";
+    s4.Section = "31A1"; 
+    s4.Birthday = new DateTime(2004, 11, 20);
+    s4.SetGender(Gender.Male); 
+    students.Add(s4);
+  
+    var s5 = new Student("Aldin", "Soliman");
+    s5.Title = "Mr."; 
+    s5.Course = "BSIT";
+    s5.Section = "31A1";
+    s5.Birthday = new DateTime(2004, 9, 10);
+    s5.SetGender(Gender.Male);
+    students.Add(s5);
+
+    var s6 = new Student("Lance", "Leominares");
+    s6.Title = "Mr.";
+    s6.Course = "BSIT";
+    s6.Section = "31A1";
+    s6.Birthday = new DateTime(2003, 2, 14); 
+    s6.SetGender(Gender.Male);
+    students.Add(s6);
+
+    var s7 = new Student("Jay", "Relox");
+    s7.Title = "Mr."; 
+    s7.Course = "BSIT";
+    s7.Section = "31A1";
+    s7.Birthday = new DateTime(2002, 8, 5); 
+    s7.SetGender(Gender.Male);
+    students.Add(s7);
+
+    var s8 = new Student("Kurt", "Nacario"); 
+    s8.Title = "Mr."; 
+    s8.Course = "BSIT";
+    s8.Section = "31A1";
+    s8.Birthday = new DateTime(2003, 4, 27); 
+    s8.SetGender(Gender.Male);
+    students.Add(s8);
+
+    var s9 = new Student("Terrance", "Soriano"); 
+    s9.Title = "Mr."; 
+    s9.Course = "BSIT";
+    s9.Section = "31A1"; 
+    s9.Birthday = new DateTime(2002, 12, 1); 
+    s9.SetGender(Gender.Male);
+    students.Add(s9);
+    
+    var s10 = new Student("Rick", "Sorkin"); 
+    s10.Title = "Ms."; 
+    s10.Course = "BSIT";
+    s10.Section = "31A1";
+    s10.Birthday = new DateTime(2004, 6, 9); 
+    s10.SetGender(Gender.Female); 
+    students.Add(s10);
+}
+
+<table border="1">
+    <tr>
+        <th>Full Name</th>
+        <th>Gender</th>
+        <th>Course</th>
+        <th>Section</th>
+        <th>Birthday</th>
+        <th>Age</th>
+    </tr>
+    @foreach (var stud in students)
+    {
+        <tr>
+            <td>@stud.FullName</td>
+            <td>@stud.Gender</td>
+            <td>@stud.Course</td>
+            <td>@stud.Section</td>
+            <td>@stud.Birthday.ToShortDateString()</td>
+            <td>@stud.Age</td>
+        </tr>
+    }
+</table>
